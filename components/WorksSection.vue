@@ -103,7 +103,7 @@ const cards = ref([
   },
 ])
 
-const activeCard = ref<number>(2)
+const activeCard = ref<number>(0)
 
 function toggleCard(index: number) {
   activeCard.value = index

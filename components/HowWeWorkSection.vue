@@ -51,7 +51,9 @@
         <p class="text-[48px] text-center">
           Faster, smarter, and simpler.
         </p>
-        <button class="cta-button">Let's Collaborate</button>
+        <a href="mailto:brilliant@foxion.id" class="cta-button">
+          Let's Collaborate
+        </a>
       </div>
     </div>
   </div>
