@@ -135,6 +135,7 @@ onBeforeUnmount(() => {
     flex-grow: 1;
     scroll-snap-type: y mandatory;
     overflow-y: auto;
+    overflow-x: hidden;
     height: 100%;
     position: relative;
   }

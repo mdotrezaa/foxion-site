@@ -6,7 +6,7 @@
         Over the years, we have developed a lot of products. Here are some of our flagship products that loved the most by our clients.
       </p>
 
-      <div class="h-1 w-[510px] bg-[#173265] mb-10"></div>
+      <div class="h-1 w-[120px] md:w-[510px] bg-[#173265] mb-10"></div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div

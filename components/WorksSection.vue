@@ -1,12 +1,12 @@
 <template>
-  <div class="flex flex-col sm:flex-row h-screen items-center justify-center !w-[80vw] m-auto gap-2 p-4 bg-white">
+  <div class="flex flex-col sm:flex-row h-screen items-center justify-center !w-[90vw] m-auto gap-2 p-4 bg-white">
     <div
       v-for="(card, index) in cards"
       :key="index"
       class="relative transition-all duration-500 ease-in-out text-white cursor-pointer flex flex-col justify-between"
       :class="[
         activeCard === index ? 'w-full sm:w-[787px]' : 'hidden sm:block sm:w-[231px]',
-        'shadow-lg overflow-hidden h-[80vh]',
+        'shadow-lg overflow-hidden h-[calc(100vh-6rem)] sm:h-[80vh]',
       ]"
       @click="activeCard !== index && toggleCard(index)"
     >
@@ -23,24 +23,24 @@
       />
 
       <!-- Content -->
-      <div class="relative z-10 w-full h-full flex m-auto flex-col">
+      <div class="relative z-10 w-full h-full flex flex-col">
         <div
           v-if="activeCard === index"
-          class="relative flex flex-1 flex-col justify-end px-8 pb-8 transition-opacity duration-500 opacity-100"
+          class="relative flex flex-1 flex-col justify-end px-8 pb-8 transition-opacity duration-500 opacity-100 overflow-y-auto sm:overflow-visible"
         >
           <!-- Bottom content row -->
-          <div class="flex items-end justify-between w-full">
+          <div class="flex flex-col items-end justify-between w-full mt-auto">
             <!-- Title & Description -->
             <div class="text-left pb-[6rem]">
-              <h2 class="text-5xl font-semibold mb-2">{{ card.title }}</h2>
-              <p class="text-xl text-white/80 max-w-md">{{ card.description }}</p>
+              <h2 class="text-4xl sm:text-5xl font-semibold mb-2">{{ card.title }}</h2>
+              <p class="text-lg sm:text-xl text-white/80">{{ card.description }}</p>
             </div>
 
             <!-- Navigation -->
             <div class="flex gap-4">
               <!-- Prev Button -->
               <button
-                class="w-10 h-10 flex items-center justify-center bg-[#173265] text-black rounded hover:bg-white disabled:opacity-40 disabled:bg-[#F6F6F6]/60"
+                class="w-10 h-10 flex items-center justify-center bg-[#173265] text-black rounded hover:bg-[#173265] disabled:opacity-40 disabled:bg-[#F6F6F6]/60"
                 :disabled="index === 0"
                 @click.stop="goToPrev(index)"
               >
@@ -51,7 +51,7 @@
 
               <!-- Next Button -->
               <button
-                class="w-10 h-10 flex items-center justify-center bg-[#173265] text-black rounded hover:bg-white disabled:opacity-40 disabled:bg-[#F6F6F6]/60"
+                class="w-10 h-10 flex items-center justify-center bg-[#173265] text-black rounded hover:bg-[#173265] disabled:opacity-40 disabled:bg-[#F6F6F6]/60"
                 :disabled="index === cards.length - 1"
                 @click.stop="goToNext(index)"
               >
@@ -62,7 +62,6 @@
             </div>
           </div>
         </div>
-
         <div
           v-else
           class="relative h-full w-full flex items-end justify-center pb-4"
