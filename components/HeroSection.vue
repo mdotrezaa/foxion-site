@@ -16,9 +16,9 @@
 
       <!-- Top Centered Logo and Text -->
       <div class="absolute top-4 left-1/2 transform -translate-x-1/2 z-10 text-center px-4">
-        <img src="/images/logo.svg" alt="Logo" class="h-[72px] mx-auto mb-[4rem]">
-        <h2 class="text-white text-3xl mb-3">Let’s Create Something</h2>
-        <p class="text-white text-5xl font-semibold">Beyond Your Expectation</p>
+        <img src="/images/logo.svg" alt="Logo" class="h-12 md:h-[72px] mx-auto mb-6 md:mb-[4rem]">
+        <h2 class="text-white text-xl md:text-3xl mb-2 md:mb-3">Let’s Create Something</h2>
+        <p class="text-white text-2xl md:text-5xl font-semibold">Beyond Your Expectation</p>
       </div>
     </div>
 </template>
@@ -38,13 +38,35 @@ export default {
 <style lang="scss">
 .hero-slider {
   width: 100%;
-  height: 100vh;
+  height: auto;
 
   .first-img,
   .second-img {
     width: 100%;
-    height: 100vh;
+    height: auto;
     object-fit: cover;
+    display: block;
+  }
+
+  svg {
+    height: 100%;
+    max-height: 100%;
+    width: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-slider {
+    height: 100vh;
+
+    .first-img,
+    .second-img {
+      height: 100vh;
+    }
+
+    svg {
+      height: 100vh;
+    }
   }
 }
 </style>

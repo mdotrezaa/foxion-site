@@ -1,11 +1,11 @@
 <template>
-  <div class="how-we-work-timeline pt-[4rem] px-[8rem]">
+  <div class="how-we-work-timeline pt-[4rem] px-3 md:px-[8rem]">
     <!-- Header -->
-    <div class="px-10 mb-8">
-      <h2 class="text-white text-[2rem] font-semibold">
+    <div class="mb-8">
+      <h2 class="text-white text-2xl md:text-3xl font-semibold mb-2">
         How We Help You To Reach Your Goals
       </h2>
-      <h3 class="text-white text-[1.1rem]">
+      <h3 class="text-white text-base md:text-lg leading-relaxed">
         Whether you're a government agency, a logistics company, a maritime operator, or a SaaS platform, our modular technology adapts to your unique workflows. We collaborate through:
       </h3>
     </div>
@@ -32,12 +32,12 @@
         </div>
 
         <!-- Content section -->
-        <div class="content">
+        <div class="content flex flex-col lg:!flex-row">
           <div class="text">
             <h3>{{ step.title }}</h3>
             <p>{{ step.description }}</p>
           </div>
-          <div class="image">
+          <div class="image max-w-[200px] md:max-w-[400px]">
             <img :src="step.image" :alt="step.title" />
           </div>
         </div>
@@ -51,7 +51,7 @@
         <p class="text-[48px] text-center">
           Faster, smarter, and simpler.
         </p>
-        <a href="mailto:brilliant@foxion.id" class="cta-button">
+        <a href="mailto:mailto:brilliant@foxion.id" class="cta-button">
           Let's Collaborate
         </a>
       </div>
