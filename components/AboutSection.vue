@@ -4,7 +4,7 @@
         <div class="about-grid">
           <!-- Left Column -->
           <div class="about-text">
-            <h2 class="font-semibold text-[#3D3D3D]">About Us</h2>
+            <h2 class="font-semibold text-[24px] md:text-[36px] text-[#3D3D3D]">About Us</h2>
             <p class="text-[#5D5D5D]">
               Foxion Technologies is a technology innovation company that reimagines how organizations operate in a digital world.
               We build AI-powered and people-first systems that simplify complex workflows, automate decision-making, and scale
@@ -18,8 +18,8 @@
 
           <!-- Right Column -->
           <div class="about-trust">
-            <h3 class="font-semibold text-[#3D3D3D]">Trusted by</h3>
-            <h2 class="font-semibold text-[#3D3D3D]">30+ Companies</h2>
+            <h3 class="font-semibold text-[20px] md:text-[32px] text-[#3D3D3D]">Trusted by</h3>
+            <h2 class="font-semibold text-[24px] md:text-[36px] text-[#3D3D3D] mb-4">30+ Companies</h2>
             <div class="logo-grid">
               <img src="/images/national-geographic.png" alt="National Geographic" >
               <img src="/images/radikari.png" alt="Radikari" >
@@ -30,29 +30,52 @@
               <img src="/images/foresthree.png" alt="Foresthree Coffee" >
               <img src="/images/stafbook.png" alt="Stafbook" >
             </div>
-            <p class="text-gray-500">and more...</p>
+            <p class="text-gray-500 mt-[4rem]">and more...</p>
           </div>
         </div>
       </div>
 
       <div class="grid  gap-6 border-t border-gray-200 pt-8 px-4 md:grid-cols-4 grid-cols-2">
-        <div v-for="n in 4" :key="n" class="text-center">
-          <h2 class="text-[2.5rem] text-[#1f2c56] mb-2 font-bold">300</h2>
-          <p class="text-gray-600">Projects</p>
+        <div v-for="(n,idx) in indexs" :key="idx" class="text-center">
+          <h2 class="text-[2.5rem] text-[#1f2c56] mb-2 font-bold">{{n.title}}</h2>
+          <p class="text-gray-600">{{n.description}}</p>
         </div>
       </div>
     </section>
 </template>
 
 
-<script>
+<script setup>
+
+const indexs = [
+  {
+    title: '50+',
+    description:
+      'Projects Delivered',
+  },
+  {
+    title: '10+',
+    description:
+      'In-House Product',
+  },
+  {
+    title: '10+',
+    description:
+      'Team Member',
+  },
+  {
+    title: '300',
+    description:
+      'Industry HandledIndustry Handled',
+  },
+]
 </script>
 
 <style lang="scss">
 .about-section {
   background: #fff;
   font-family: sans-serif;
-  padding: 2rem 1rem;
+  padding: 0 1rem;
 
   .container {
     max-width: 1200px;
@@ -92,11 +115,6 @@
   .about-trust h3 {
     color: #555;
     margin: 0;
-  }
-
-  .about-trust h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
   }
 
   .logo-grid {
@@ -165,10 +183,6 @@
       font-size: 1.5rem;
     }
 
-    .about-trust h2 {
-      font-size: 1.25rem;
-    }
-
     .stat-item h2 {
       font-size: 2rem;
     }
@@ -177,7 +191,7 @@
 .about-section {
   background: #fff;
   font-family: sans-serif;
-  padding: 2rem 1rem;
+  padding: 0 1rem;
 
   .container {
     max-width: 1200px;
@@ -187,18 +201,15 @@
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
 
     > div:first-child {
       padding-right: 2rem;
       padding-top: 4rem;
-      padding-bottom: 4rem;
       border-right: 1px solid #ddd;
     }
 
     > div:last-child {
       padding-top: 4rem;
-      padding-bottom: 4rem;
       padding-left: 2rem;
     }
   }
@@ -217,11 +228,6 @@
   .about-trust h3 {
     color: #555;
     margin: 0;
-  }
-
-  .about-trust h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
   }
 
   .logo-grid {
@@ -295,10 +301,6 @@
     }
     .about-text h2 {
       font-size: 1.5rem;
-    }
-
-    .about-trust h2 {
-      font-size: 1.25rem;
     }
 
     .stat-item h2 {

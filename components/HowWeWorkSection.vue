@@ -2,42 +2,43 @@
   <div class="how-we-work-timeline pt-[4rem] px-3 md:px-[8rem]">
     <!-- Header -->
     <div class="mb-8">
-      <h2 class="text-white text-2xl md:text-3xl font-semibold mb-2">
+      <h2 class="text-white text-[36px] md:text-3xl font-semibold mb-2">
         How We Help You To Reach Your Goals
       </h2>
-      <h3 class="text-white text-base md:text-lg leading-relaxed">
-        Whether you're a government agency, a logistics company, a maritime operator, or a SaaS platform, our modular technology adapts to your unique workflows. We collaborate through:
+      <h3 class="text-white text-[24px] md:text-lg leading-relaxed">
+        Whether you're a government agency, a logistics company, a maritime operator, or a SaaS platform, our modular
+        technology adapts to your unique workflows. We collaborate through:
       </h3>
     </div>
 
     <!-- Steps with scroll snap -->
     <div class="step-wrapper" ref="stepWrapper">
-      <div
-        v-for="(step, index) in steps"
-        :key="index"
-        class="step"
-        :class="{
-          active: index === activeIndex,
-          next: index === activeIndex + 1
-        }"
-      >
+      <div v-for="(step, index) in steps" :key="index" class="step" :class="{
+        active: index === activeIndex,
+        next: index === activeIndex + 1
+      }">
         <div class="timeline">
           <!-- Vertical line between diamonds -->
           <div class="connector-line"></div>
 
           <!-- Diamond -->
-          <div class="diamond">
+          <div class="diamond !hidden md:!flex">
             <span>{{ String(index + 1).padStart(2, '0') }}</span>
           </div>
         </div>
 
         <!-- Content section -->
-        <div class="content flex flex-col lg:!flex-row">
+        <div class="content flex flex-col !pl-[5rem] md:!pl-[6rem] !items-start md:!items-center lg:!flex-row">
+          <div class="!flex md:!hidden">
+            <div class="diamond">
+              <span>{{ String(index + 1).padStart(2, '0') }}</span>
+            </div>
+          </div>
           <div class="text">
             <h3>{{ step.title }}</h3>
-            <p>{{ step.description }}</p>
+            <p cla>{{ step.description }}</p>
           </div>
-          <div class="image max-w-[200px] md:max-w-[400px]">
+          <div class="max-w-[400px]">
             <img :src="step.image" :alt="step.title" />
           </div>
         </div>
@@ -150,17 +151,18 @@ onBeforeUnmount(() => {
 
     &.active {
       opacity: 1;
-			h3 {
-          font-size: 3rem!important;
-          font-weight: bold;
-          margin-bottom: 1rem;
-        }
 
-        p {
-          font-size: 1.5rem!important;
-          line-height: 1.6;
-          color: #d1dbee;
-        }
+      h3 {
+        font-size: 3rem !important;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.5rem !important;
+        line-height: 1.6;
+        color: #d1dbee;
+      }
     }
 
     &.next {
@@ -187,7 +189,7 @@ onBeforeUnmount(() => {
         background: #fff;
         transform: translateX(-50%);
         z-index: 0;
-				height: 100%;
+        height: 100%;
       }
 
       .diamond {
@@ -218,13 +220,16 @@ onBeforeUnmount(() => {
       margin: auto;
       z-index: 1;
       gap: 2rem;
-      padding-left: 6rem;
+      padding-left: 8rem;
 
       .text {
         flex: 1;
-				h3, p {
-					transition: font-size 0.5s ease;
-				}
+
+        h3,
+        p {
+          transition: font-size 0.5s ease;
+        }
+
         h3 {
           font-size: 2rem;
           font-weight: bold;
@@ -239,10 +244,28 @@ onBeforeUnmount(() => {
       }
 
       .image img {
-        max-width: 400px;
         border-radius: 8px;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
       }
+    }
+  }
+
+  .diamond {
+    z-index: 1;
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    color: #15407a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(45deg);
+    font-weight: bold;
+    font-size: 2rem;
+    position: relative;
+
+    span {
+      transform: rotate(-45deg);
     }
   }
 
@@ -282,6 +305,67 @@ onBeforeUnmount(() => {
         background-color: #e2e8f0;
         color: #173265;
       }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .step {
+    .timeline {
+      position: absolute;
+      left: 3rem;
+      top: 1rem !important;
+      bottom: 0;
+      width: 40px;
+      display: flex;
+      align-items: start;
+      justify-content: start !important;
+      flex-direction: column;
+    }
+
+    &.active {
+      opacity: 1;
+
+      h3 {
+        font-size: 1.75rem !important;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1rem !important;
+        line-height: 1.6;
+        color: #d1dbee;
+      }
+    }
+  }
+
+  .content {
+
+    .text {
+      flex: 1;
+
+      h3,
+      p {
+        transition: font-size 0.5s ease;
+      }
+
+      h3 {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 0.75rem;
+        line-height: 1.6;
+        color: #d1dbee;
+      }
+    }
+
+    .image img {
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     }
   }
 }

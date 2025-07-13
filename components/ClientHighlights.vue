@@ -1,5 +1,5 @@
 <template>
-  <section class="relative text-white h-screen py-16">
+  <section class="relative text-white px-10 py-16">
     <!-- Background Image -->
     <div
       class="absolute inset-0 z-0 bg-cover bg-center"
@@ -17,7 +17,16 @@
         <p class="mb-10 text-[20px] text-gray-200 max-w-xl">
           We’ve helped companies reduce processing time by 60%, automate compliance workflows, and scale people ops across multiple sites.
         </p>
-
+<div class="grid md:hidden grid-cols-2 gap-4">
+        <div class="flex flex-col gap-5 mt-5">
+            <img src="/images/testimonials/user-1.png" alt="user 1" class="grayscale object-cover h-[400px] w-full" >
+            <img src="/images/testimonials/user-3.png" alt="user 3" class="grayscale object-cover h-[250px] w-full" >
+        </div>
+        <div class="flex flex-col gap-5">
+            <img src="/images/testimonials/user-2.png" alt="user 2" class="grayscale object-cover h-[300px] w-full" >
+            <img src="/images/testimonials/user-4.png" alt="user 4" class="grayscale object-cover h-[350px] w-full" >
+        </div>
+      </div>
         <!-- Testimonial 1 -->
         <div class="mb-12 pl-[5rem] relative">
 					<img src="/images/quoteIcon.svg" alt="user 1" class="w-[148px] absolute -top-20 -left-10 text-white/10 select-none" >
@@ -39,7 +48,7 @@
       </div>
 
       <!-- Right: Images -->
-      <div class="grid grid-cols-2 gap-4">
+      <div class="hidden md:grid grid-cols-2 gap-4">
         <div class="flex flex-col gap-5 mt-5">
             <img src="/images/testimonials/user-1.png" alt="user 1" class="grayscale object-cover h-[400px] w-full" >
             <img src="/images/testimonials/user-3.png" alt="user 3" class="grayscale object-cover h-[250px] w-full" >

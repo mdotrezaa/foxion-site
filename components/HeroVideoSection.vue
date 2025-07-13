@@ -17,9 +17,9 @@
 
     <!-- Content -->
     <div class="relative z-20 flex flex-col items-start justify-center h-full px-6 max-w-5xl mx-auto text-white">
-      <h1 class="text-4xl sm:text-5xl font-bold mb-4">Ready To Take Your Idea To The Next Level?</h1>
-      <p class="text-xl mb-6">Faster, smarter, and simpler.</p>
-        <a href="mailto:brilliant@foxion.id" class="cta-button">
+      <h1 class="text-[48px] md:text-4xl font-bold mb-4">Ready To Take Your Idea To The Next Level?</h1>
+      <p class="text-[36px] md:text-xl mb-6">Faster, smarter, and simpler.</p>
+        <a href="mailto:brilliant@foxion.id" class="cta-button w-full md:w-[240px] text-center">
           Let's Collaborate
         </a>
     </div>
