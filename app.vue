@@ -1,7 +1,7 @@
 <template>
   <div>
   <div class="relative w-full h-full">
-    <ImgComparisonSlider class="hero-slider">
+    <ImgComparisonSlider class="hero-slider" :value="100">
       <!-- eslint-disable -->
       <img slot="first" class="first-img" src="/images/before.svg" />
       <img slot="second" class="second-img" src="/images/after.svg" />

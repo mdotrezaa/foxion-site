@@ -1,10 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    ssr: true,
-  target: 'static', // needed for full static generation
-  content: {
-    documentDriven: true,
-  },
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   css: [

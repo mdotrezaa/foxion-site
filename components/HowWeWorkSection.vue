@@ -190,8 +190,8 @@ onBeforeUnmount(() => {
 
       .diamond {
         z-index: 1;
-        width: 40px;
-        height: 40px;
+        width: 80px;
+        height: 80px;
         background: #fff;
         color: #15407a;
         display: flex;
@@ -199,7 +199,7 @@ onBeforeUnmount(() => {
         justify-content: center;
         transform: rotate(45deg);
         font-weight: bold;
-        font-size: 1rem;
+        font-size: 2rem;
         position: relative;
 
         span {
@@ -216,7 +216,7 @@ onBeforeUnmount(() => {
       margin: auto;
       z-index: 1;
       gap: 2rem;
-      padding-left: 4rem;
+      padding-left: 6rem;
 
       .text {
         flex: 1;
