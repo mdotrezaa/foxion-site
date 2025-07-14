@@ -2,9 +2,9 @@
   <div>
     <HeroSection />
     <AboutSection />
-    <WorksSection />
+    <WorksSection  id="prev-section" />
     <HowWeWorkSection />
-    <ProductSection />
+    <ProductSection id="next-section" />
     <ClientHighlights />
     <HeroVideoSection />
     <FooterSection />

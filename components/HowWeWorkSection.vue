@@ -116,17 +116,28 @@ onMounted(() => {
   const el = stepWrapper.value
 
   const allowScrollOutside = (e) => {
-    if (
-      (el.scrollTop === 0 && e.deltaY < 0) || 
-      (el.scrollHeight - el.clientHeight - el.scrollTop < 1 && e.deltaY > 0)
-    ) {
+    const isAtTop = el.scrollTop === 0 && e.deltaY < 0
+    const isAtBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 1 && e.deltaY > 0
+
+    if (isAtTop || isAtBottom) {
       e.preventDefault()
-      window.scrollBy(0, e.deltaY)
+
+      if (isAtBottom) {
+        // scroll to next section
+        const nextSection = document.getElementById('next-section')
+        if (nextSection) {
+          nextSection.scrollIntoView({ behavior: 'smooth' })
+        }
+      } else if (isAtTop) {
+        // Optionally scroll to previous section
+        document.getElementById('prev-section')?.scrollIntoView({ behavior: 'smooth' })
+      }
+
+      return
     }
   }
 
   el.addEventListener('wheel', allowScrollOutside, { passive: false })
-
   el.addEventListener('scroll', handleScroll)
   handleScroll()
 
@@ -134,10 +145,6 @@ onMounted(() => {
     el.removeEventListener('wheel', allowScrollOutside)
     el.removeEventListener('scroll', handleScroll)
   })
-})
-
-onBeforeUnmount(() => {
-  stepWrapper.value?.removeEventListener('scroll', handleScroll)
 })
 </script>
 
