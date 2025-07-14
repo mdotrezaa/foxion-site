@@ -21,15 +21,15 @@
             <h3 class="font-semibold text-[20px] md:text-[32px] text-[#3D3D3D]">Trusted by</h3>
             <h2 class="font-semibold text-[24px] md:text-[36px] text-[#3D3D3D] mb-4">30+ Companies</h2>
             <div class="logo-grid">
-              <img src="/images/national-geographic.png" alt="National Geographic" >
-              <img src="/images/radikari.png" alt="Radikari" >
-              <img src="/images/brin.png" alt="BRIN" >
-              <img src="/images/samudera.png" alt="Samudera" >
-              <img src="/images/gojekk.png" alt="Gojek" >
-              <img src="/images/dana.png" alt="DANA" >
-              <img src="/images/rumahtani.png" alt="Rumah Tani" >
-              <img src="/images/revyn.png" alt="Refyn Indnesia" >
-              <img src="/images/stafbook.png" alt="Stafbook" >
+              <img src="/images/national-geographic.svg" alt="National Geographic" >
+              <img src="/images/radikari.svg" alt="Radikari" >
+              <img src="/images/brin.svg" alt="BRIN" >
+              <img src="/images/samudera.svg" alt="Samudera" >
+              <img src="/images/gojek.svg" alt="Gojek" >
+              <img src="/images/dana.svg" alt="DANA" >
+              <img src="/images/rumahtani.svg" alt="Rumah Tani" >
+              <img src="/images/revyn.svg" alt="Refyn Indnesia" >
+              <img src="/images/stafbook.svg" alt="Stafbook" >
             </div>
             <p class="text-gray-500 my-[2rem]">and more...</p>
           </div>
