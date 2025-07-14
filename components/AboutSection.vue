@@ -27,7 +27,8 @@
               <img src="/images/samudera.png" alt="Samudera" >
               <img src="/images/gojekk.png" alt="Gojek" >
               <img src="/images/dana.png" alt="DANA" >
-              <img src="/images/foresthree.png" alt="Foresthree Coffee" >
+              <img src="/images/rumahtani.png" alt="Rumah Tani" >
+              <img src="/images/revyn.png" alt="Refyn Indnesia" >
               <img src="/images/stafbook.png" alt="Stafbook" >
             </div>
             <p class="text-gray-500 my-[2rem]">and more...</p>

@@ -2,7 +2,7 @@
   <section
     class="min-h-[calc(100vh-70px)] bg-[#173265]  overflow-hidden lg:max-h-[1084px] xl:h-screen xl:max-h-screen xl:overflow-hidden relative">
       <div class="relative md:absolute inset-0 z-10 top-0 flex flex-col items-center text-center pointer-events-none px-4">
-        <img src="/images/logo.svg" alt="Logo" class="h-12 md:h-[72px] mt-3 mb-6 md:mb-[4rem]" />
+        <img src="/images/logo.svg" alt="Logo" class="h-12 md:h-[72px] mt-3 mb-6 md:mb-[2rem]" />
         <h2 class="text-white text-[24px] font-normal md:text-3xl mb-2 md:mb-3">
           Let’s Create Something
         </h2>
