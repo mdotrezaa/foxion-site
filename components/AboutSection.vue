@@ -20,17 +20,21 @@
           <div class="about-trust pt-0 md:pt-[2rem] px-[1rem]">
             <h3 class="font-semibold text-[20px] md:text-[32px] text-[#3D3D3D]">Trusted by</h3>
             <h2 class="font-semibold text-[24px] md:text-[36px] text-[#3D3D3D] mb-4">30+ Companies</h2>
-            <div class="logo-grid">
-              <img src="/images/national-geographic.svg" alt="National Geographic" >
-              <img src="/images/radikari.svg" alt="Radikari" >
-              <img src="/images/brin.svg" alt="BRIN" >
-              <img src="/images/samudera.svg" alt="Samudera" >
-              <img src="/images/gojek.svg" alt="Gojek" >
-              <img src="/images/dana.svg" alt="DANA" >
-              <img src="/images/rumahtani.svg" alt="Rumah Tani" >
-              <img src="/images/revyn.svg" alt="Refyn Indnesia" >
-              <img src="/images/stafbook.svg" alt="Stafbook" >
+            
+            <!-- Fix starts here -->
+            <div class="grid grid-cols-2 md:grid-cols-3 mt-8 gap-4 items-center">
+              <nuxt-img class="w-full" src="/images/national-geographic.svg" alt="National Geographic" />
+              <nuxt-img class="w-full" src="/images/radikari.svg" alt="Radikari" />
+              <nuxt-img class="w-full" src="/images/brin.svg" alt="BRIN" />
+              <nuxt-img class="w-full" src="/images/samudera.svg" alt="Samudera" />
+              <nuxt-img class="w-full" src="/images/gojek.svg" alt="Gojek" />
+              <nuxt-img class="w-full" src="/images/dana.svg" alt="DANA" />
+              <nuxt-img class="w-full" src="/images/rumahtani.svg" alt="Rumah Tani" />
+              <nuxt-img class="w-full" src="/images/revyn.svg" alt="Refyn Indonesia" />
+              <nuxt-img class="w-full" src="/images/stafbook.svg" alt="Stafbook" />
             </div>
+            <!-- Fix ends here -->
+
             <p class="text-gray-500 my-[2rem]">and more...</p>
           </div>
         </div>
