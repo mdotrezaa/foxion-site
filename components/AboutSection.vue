@@ -22,16 +22,16 @@
             <h2 class="font-semibold text-[24px] md:text-[36px] text-[#3D3D3D] mb-4">30+ Companies</h2>
             
             <!-- Fix starts here -->
-            <div class="grid grid-cols-2 md:grid-cols-3 mt-8 gap-2 items-center">
-              <nuxt-img class="h-12 md:h-16 object-contain" src="/images/national-geographic.svg" alt="National Geographic" />
-              <nuxt-img class="h-12 md:h-16 object-contain" src="/images/radikari.svg" alt="Radikari" />
-              <nuxt-img class="h-12 md:h-16 object-contain" src="/images/brin.svg" alt="BRIN" />
-              <nuxt-img class="h-12 md:h-16 object-contain" src="/images/samudera.svg" alt="Samudera" />
-              <nuxt-img class="h-12 md:h-16 object-contain" src="/images/gojek.svg" alt="Gojek" />
-              <nuxt-img class="h-12 md:h-16 object-contain" src="/images/dana.svg" alt="DANA" />
-              <nuxt-img class="h-12 md:h-16 object-contain" src="/images/rumahtani.svg" alt="Rumah Tani" />
-              <nuxt-img class="h-12 md:h-16 object-contain" src="/images/revyn.svg" alt="Refyn Indonesia" />
-              <nuxt-img class="h-12 md:h-16 object-contain" src="/images/stafbook.svg" alt="Stafbook" />
+            <div class="grid grid-cols-2 md:grid-cols-3 mt-8 gap-5 items-center">
+              <nuxt-img class="w-full h-auto object-contain p-3 md:p-2" src="/images/national-geographic.png" alt="National Geographic" />
+              <nuxt-img class="w-full h-auto object-contain p-3 md:p-2" src="/images/radikari.png" alt="Radikari" />
+              <nuxt-img class="w-full h-auto object-contain p-3 md:p-2" src="/images/brin.png" alt="BRIN" />
+              <nuxt-img class="w-full h-auto object-contain p-3 md:p-2" src="/images/samudera.png" alt="Samudera" />
+              <nuxt-img class="w-full h-auto object-contain p-3 md:p-2" src="/images/gojek.png" alt="Gojek" />
+              <nuxt-img class="w-full h-auto object-contain p-3 md:p-2" src="/images/dana.png" alt="DANA" />
+              <nuxt-img class="w-full h-auto object-contain p-3 md:p-2" src="/images/rumahtani.png" alt="Rumah Tani" />
+              <nuxt-img class="w-full h-auto object-contain p-3 md:p-2" src="/images/revyn.svg" alt="Refyn Indonesia" />
+              <nuxt-img class="w-full h-auto object-contain p-3 md:p-2" src="/images/stafbook.svg" alt="Stafbook" />
             </div>
             <!-- Fix ends here -->
 
