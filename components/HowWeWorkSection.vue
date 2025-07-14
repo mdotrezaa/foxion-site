@@ -22,13 +22,13 @@
           next: index === activeIndex + 1
         }">
         <div class="timeline">
-          <div class="connector-line"/>
+          <div class="connector-line left-0 md:left-[50%]"/>
           <div class="diamond !hidden md:!flex">
             <span>{{ String(index + 1).padStart(2, '0') }}</span>
           </div>
         </div>
 
-        <div class="content flex flex-col !pl-[5rem] md:!pl-[6rem] !items-start md:!items-center lg:!flex-row">
+        <div class="content flex flex-col !pl-[3rem] md:!pl-[6rem] !items-start md:!items-center lg:!flex-row">
           <div class="!flex md:!hidden">
             <div class="diamond">
               <span>{{ String(index + 1).padStart(2, '0') }}</span>
@@ -113,8 +113,27 @@ const handleScroll = () => {
 }
 
 onMounted(() => {
-  stepWrapper.value.addEventListener('scroll', handleScroll)
+  const el = stepWrapper.value
+
+  const allowScrollOutside = (e) => {
+    if (
+      (el.scrollTop === 0 && e.deltaY < 0) || 
+      (el.scrollHeight - el.clientHeight - el.scrollTop < 1 && e.deltaY > 0)
+    ) {
+      e.preventDefault()
+      window.scrollBy(0, e.deltaY)
+    }
+  }
+
+  el.addEventListener('wheel', allowScrollOutside, { passive: false })
+
+  el.addEventListener('scroll', handleScroll)
   handleScroll()
+
+  onBeforeUnmount(() => {
+    el.removeEventListener('wheel', allowScrollOutside)
+    el.removeEventListener('scroll', handleScroll)
+  })
 })
 
 onBeforeUnmount(() => {
@@ -187,7 +206,6 @@ onBeforeUnmount(() => {
         position: absolute;
         top: 40px;
         bottom: 0;
-        left: 50%;
         width: 1px;
         background: #fff;
         transform: translateX(-50%);
@@ -227,11 +245,6 @@ onBeforeUnmount(() => {
 
       .text {
         flex: 1;
-
-        h3,
-        p {
-          transition: font-size 0.5s ease;
-        }
 
         h3 {
           font-size: 2rem;
@@ -364,13 +377,13 @@ onBeforeUnmount(() => {
     .content {
       .text {
         h3 {
-          font-size: 0.75rem;
+          font-size: 1.75rem !important;
           font-weight: bold;
           margin-bottom: 1rem;
         }
 
         p {
-          font-size: 0.75rem;
+          font-size: 0.75rem !important;
           line-height: 1.6;
           color: #d1dbee;
         }
