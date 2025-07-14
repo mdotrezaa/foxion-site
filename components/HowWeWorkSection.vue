@@ -112,6 +112,8 @@ const handleScroll = () => {
   activeIndex.value = closestIndex
 }
 
+let touchStartY = 0
+
 onMounted(() => {
   const el = stepWrapper.value
 
@@ -123,29 +125,49 @@ onMounted(() => {
       e.preventDefault()
 
       if (isAtBottom) {
-        // scroll to next section
-        const nextSection = document.getElementById('next-section')
-        if (nextSection) {
-          nextSection.scrollIntoView({ behavior: 'smooth' })
-        }
+        document.getElementById('next-section')?.scrollIntoView({ behavior: 'smooth' })
       } else if (isAtTop) {
-        // Optionally scroll to previous section
         document.getElementById('prev-section')?.scrollIntoView({ behavior: 'smooth' })
       }
+    }
+  }
 
-      return
+  const onTouchStart = (e) => {
+    touchStartY = e.touches[0].clientY
+  }
+
+  const onTouchEnd = (e) => {
+    const touchEndY = e.changedTouches[0].clientY
+    const deltaY = touchStartY - touchEndY
+
+    const isSwipeUp = deltaY > 50
+    const isSwipeDown = deltaY < -50
+
+    const isAtBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 1
+    const isAtTop = el.scrollTop === 0
+
+    if (isSwipeUp && isAtBottom) {
+      document.getElementById('next-section')?.scrollIntoView({ behavior: 'smooth' })
+    } else if (isSwipeDown && isAtTop) {
+      document.getElementById('prev-section')?.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
   el.addEventListener('wheel', allowScrollOutside, { passive: false })
   el.addEventListener('scroll', handleScroll)
+  el.addEventListener('touchstart', onTouchStart, { passive: true })
+  el.addEventListener('touchend', onTouchEnd, { passive: true })
+
   handleScroll()
 
   onBeforeUnmount(() => {
     el.removeEventListener('wheel', allowScrollOutside)
     el.removeEventListener('scroll', handleScroll)
+    el.removeEventListener('touchstart', onTouchStart)
+    el.removeEventListener('touchend', onTouchEnd)
   })
 })
+
 </script>
 
 <style scoped lang="scss">
