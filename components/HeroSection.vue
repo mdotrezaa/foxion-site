@@ -17,7 +17,7 @@
       <div
         class="halfscreen-height absolute top-0 !bottom-0 !w-full !h-full md:!h-screen md:max-h-[1084px] lg:h-screen">
 
-        <img-comparison-slider class="absolute bottom-[-4rem] right-0 left-0" :value="95">
+        <img-comparison-slider class="absolute bottom-[-4rem] right-0 left-0" :handle="isMobile ? true : false" :value="95">
             <div slot="second" class="relative h-full md:h-screen w-full">
               <div class="absolute h-full md:h-screen inset-0 bg-[#173265] z-0" />
               <img v-if="isMobile" class="relative left-0 right-0 bottom-0 h-full w-full mx-auto"
