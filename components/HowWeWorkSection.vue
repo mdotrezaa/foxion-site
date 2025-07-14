@@ -1,25 +1,29 @@
 <template>
   <div class="how-we-work-timeline pt-[4rem] px-3 md:px-[8rem]">
     <!-- Header -->
-    <div class="mb-8">
-      <h2 class="text-white text-[36px] md:text-3xl font-semibold mb-2">
-        How We Help You To Reach Your Goals
-      </h2>
-      <h3 class="text-white text-[24px] md:text-lg leading-relaxed">
-        Whether you're a government agency, a logistics company, a maritime operator, or a SaaS platform, our modular
-        technology adapts to your unique workflows. We collaborate through:
-      </h3>
-    </div>
 
     <!-- Steps with scroll snap -->
-    <div class="step-wrapper" ref="stepWrapper">
-      <div v-for="(step, index) in steps" :key="index" class="step" :class="{
+    <div ref="stepWrapper" class="step-wrapper">
+      <div class="mt-12">
+        <h2 class="text-white text-[36px] md:text-3xl font-semibold mb-2">
+          How We Help You To Reach Your Goals
+        </h2>
+        <h3 class="text-white text-[24px] md:text-lg leading-relaxed">
+          Whether you're a government agency, a logistics company, a maritime operator, or a SaaS platform, our modular
+          technology adapts to your unique workflows. We collaborate through:
+        </h3>
+      </div>
+      <div 
+      v-for="(step, index) in steps" 
+      :key="index" 
+      class="step" 
+      :class="{
         active: index === activeIndex,
         next: index === activeIndex + 1
       }">
         <div class="timeline">
           <!-- Vertical line between diamonds -->
-          <div class="connector-line"></div>
+          <div class="connector-line"/>
 
           <!-- Diamond -->
           <div class="diamond !hidden md:!flex">
@@ -39,17 +43,17 @@
             <p cla>{{ step.description }}</p>
           </div>
           <div class="max-w-[400px]">
-            <img :src="step.image" :alt="step.title" />
+            <img :src="step.image" :alt="step.title" >
           </div>
         </div>
       </div>
 
       <!-- Final slide -->
       <div class="slide">
-        <h2 class="text-[72px] text-center font-bold">
+        <h2 class="!text-[36px] md:!text-[52px] text-center font-bold">
           Let's turn your goals into milestones
         </h2>
-        <p class="text-[48px] text-center">
+        <p class="!text-[24px] md:!text-[42px] text-center">
           Faster, smarter, and simpler.
         </p>
         <a href="mailto:mailto:brilliant@foxion.id" class="cta-button">
@@ -253,8 +257,8 @@ onBeforeUnmount(() => {
 
   .diamond {
     z-index: 1;
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     background: #fff;
     color: #15407a;
     display: flex;
@@ -262,7 +266,7 @@ onBeforeUnmount(() => {
     justify-content: center;
     transform: rotate(45deg);
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1rem;
     position: relative;
 
     span {
@@ -311,11 +315,12 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 640px) {
+.how-we-work-timeline {
   .step {
     .timeline {
       position: absolute;
       left: 3rem;
-      top: 1rem !important;
+      top: 0;
       bottom: 0;
       width: 40px;
       display: flex;
@@ -334,7 +339,7 @@ onBeforeUnmount(() => {
       }
 
       p {
-        font-size: 1rem !important;
+        font-size: .75rem !important;
         line-height: 1.6;
         color: #d1dbee;
       }
@@ -352,7 +357,7 @@ onBeforeUnmount(() => {
       }
 
       h3 {
-        font-size: 1rem;
+        font-size: .75rem;
         font-weight: bold;
         margin-bottom: 1rem;
       }
@@ -369,5 +374,6 @@ onBeforeUnmount(() => {
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     }
   }
+}
 }
 </style>
