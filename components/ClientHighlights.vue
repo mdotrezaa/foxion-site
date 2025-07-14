@@ -31,7 +31,7 @@
         <div class="mb-12 mt-4 md:mt-0 pl-0 md:pl-[5rem] relative">
 					<img src="/images/quoteIcon.svg" alt="user 1" class="w-[148px] absolute -top-20 -left-10 text-white/10 select-none" >
           <p class="text-[16px] md:text-[32px] font-semibold z-10 relative">
-            The AI OCR helped us cut our absence feature processing time by 60%
+            The Face Recognition helped us cut our absence feature processing time by 60%
           </p>
           <hr class="my-3 border-white/20 w-full" >
           <p class="text-[12px] md:text-[20px] text-white/80">Fransiskus Raymond, Stafbook</p>
