@@ -15,6 +15,9 @@ export default defineNuxtConfig({
     '@nuxt/test-utils',
     '@nuxtjs/tailwindcss'
   ],
+  plugins: [
+    { src: '~/plugins/ImgComparisonSlider.ts', mode: 'client' }
+  ],
   app: {
     head: {
       title: 'Foxion Technologies',
