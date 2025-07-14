@@ -2,7 +2,7 @@
   <section
     class="min-h-[calc(100vh-70px)] bg-[#173265]  overflow-hidden lg:max-h-[1084px] xl:h-screen xl:max-h-screen xl:overflow-hidden relative">
     <div>
-      <div class="absolute z-50  overflow-x-hidden inset-x-0 h-screen pointer-events-none">
+      <div class="relative md:absolute z-50  overflow-x-hidden inset-x-0 h-screen pointer-events-none">
         <div class="flex flex-col justify-center py-2.5 text-center">
           <img src="/images/logo.svg" alt="Logo" class="h-12 md:h-[72px] mx-auto mb-6 md:mb-[4rem]">
 
@@ -15,7 +15,7 @@
         <img class="absolute z-10 bottom-0 right-[-4rem] md:right-0 h-full lg:h-full" src="/images/pattern2.svg">
       </div>
       <div
-        class="halfscreen-height absolute top-0 !bottom-0 !w-full !h-full md:!h-screen md:max-h-[1084px] lg:h-screen">
+        class="halfscreen-height relative md:absolute top-0 !bottom-0 !w-full !h-full md:!h-screen md:max-h-[1084px] lg:h-screen">
 
         <img-comparison-slider class="absolute bottom-[-4rem] right-0 left-0" :handle="isMobile ? true : false" :value="95">
             <div slot="second" class="relative h-full md:h-screen w-full">
