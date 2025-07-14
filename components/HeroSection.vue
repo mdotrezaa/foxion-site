@@ -1,9 +1,9 @@
 <template>
   <section
     class="min-h-[calc(100vh-70px)] bg-[#173265]  overflow-hidden lg:max-h-[1084px] xl:h-screen xl:max-h-screen xl:overflow-hidden relative">
-    <div>
-      <div class="relative md:absolute z-50  overflow-x-hidden inset-x-0 h-screen pointer-events-none">
-        <div class="flex flex-col justify-center py-2.5 text-center">
+    <div class="relative h-full">
+      <div class="relative md:absolute z-50 top-0 md:top-20  overflow-x-hidden inset-x-0 h-screen pointer-events-none">
+        <div class="flex flex-col justify-center text-center">
           <img src="/images/logo.svg" alt="Logo" class="h-12 md:h-[72px] mx-auto mb-6 md:mb-[4rem]">
 
           <h2 class="text-white text-[24px] font-normal md:text-3xl mb-2 md:mb-3">Let’s Create Something</h2>
@@ -17,7 +17,7 @@
       <div
         class="halfscreen-height relative md:absolute top-0 !bottom-0 !w-full !h-full md:!h-screen md:max-h-[1084px] lg:h-screen">
 
-        <img-comparison-slider class="absolute bottom-[-4rem] right-0 left-0" :handle="isMobile ? true : false" :value="95">
+        <img-comparison-slider class="absolute bottom-[-4rem] right-0 left-0" :value="95">
             <div slot="second" class="relative h-full md:h-screen w-full">
               <div class="absolute h-full md:h-screen inset-0 bg-[#173265] z-0" />
               <img v-if="isMobile" class="relative left-0 right-0 bottom-0 h-full w-full mx-auto"

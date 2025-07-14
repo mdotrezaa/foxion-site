@@ -30,7 +30,7 @@
               <img src="/images/foresthree.png" alt="Foresthree Coffee" >
               <img src="/images/stafbook.png" alt="Stafbook" >
             </div>
-            <p class="text-gray-500 mt-[4rem]">and more...</p>
+            <p class="text-gray-500 my-[2rem]">and more...</p>
           </div>
         </div>
       </div>
