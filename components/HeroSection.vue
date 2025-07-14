@@ -1,11 +1,15 @@
 <template>
   <section class="min-h-[calc(100vh-70px)] bg-[#173265] lg:max-h-[1084px] xl:h-screen xl:max-h-screen xl:overflow-hidden relative">
     <div class="relative flex w-full flex-col-reverse lg:block">
+      <div class="absolute inset-x-0 h-screen pointer-events-none">
+          <img class="absolute z-10 top-0 left-[-4rem] md:left-0 h-full lg:h-full" src="/images/pattern1.svg" >
+          <img class="absolute z-10 bottom-0 right-[-4rem] md:right-0 h-full lg:h-full" src="/images/pattern2.svg" >
+      </div>
       <div class="halfscreen-height relative -top-px w-full bg-blue sm:top-0 md:max-h-[1084px] lg:h-screen">
         <ImgComparisonSlider class="hero-slider" :value="95">
           <!-- eslint-disable -->
-          <img slot="second" class="second-img relative h-full lg:h-full" src="/images/after.svg" />
-          <img slot="first" class="first-img relative h-full lg:h-full" src="/images/before.svg" />
+          <img slot="second" class="second-img relative h-full lg:h-full" src="/images/after-mobile.svg" />
+          <img slot="first" class="first-img relative h-full lg:h-full" src="/images/before-mobile.svg" />
           <svg slot="handle" class="z-50 !w-[50px] md:!w-[98px]" width="98" height="1080" viewBox="0 0 98 1080" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <line x1="49" y1="1.74846e-07" x2="49" y2="1087" stroke="white" stroke-width="8" />

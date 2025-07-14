@@ -1,37 +1,33 @@
 <template>
   <div class="how-we-work-timeline pt-[4rem] px-3 md:px-[8rem]">
-    <!-- Header -->
-
-    <!-- Steps with scroll snap -->
     <div ref="stepWrapper" class="step-wrapper">
-      <div class="mt-12">
-        <h2 class="text-white text-[36px] md:text-3xl font-semibold mb-2">
+      <!-- Header now scrolls with the rest -->
+      <div class="step header-step">
+        <h2 class="text-white !text-[32px] md:!text-4xl font-semibold mb-2">
           How We Help You To Reach Your Goals
         </h2>
-        <h3 class="text-white text-[24px] md:text-lg leading-relaxed">
+        <h3 class="text-white !text-[20px] md:!text-2xl leading-relaxed">
           Whether you're a government agency, a logistics company, a maritime operator, or a SaaS platform, our modular
           technology adapts to your unique workflows. We collaborate through:
         </h3>
       </div>
-      <div 
-      v-for="(step, index) in steps" 
-      :key="index" 
-      class="step" 
-      :class="{
-        active: index === activeIndex,
-        next: index === activeIndex + 1
-      }">
-        <div class="timeline">
-          <!-- Vertical line between diamonds -->
-          <div class="connector-line"/>
 
-          <!-- Diamond -->
+      <!-- Dynamic Steps -->
+      <div 
+        v-for="(step, index) in steps" 
+        :key="index" 
+        class="step" 
+        :class="{
+          active: index === activeIndex,
+          next: index === activeIndex + 1
+        }">
+        <div class="timeline">
+          <div class="connector-line"/>
           <div class="diamond !hidden md:!flex">
             <span>{{ String(index + 1).padStart(2, '0') }}</span>
           </div>
         </div>
 
-        <!-- Content section -->
         <div class="content flex flex-col !pl-[5rem] md:!pl-[6rem] !items-start md:!items-center lg:!flex-row">
           <div class="!flex md:!hidden">
             <div class="diamond">
@@ -40,15 +36,15 @@
           </div>
           <div class="text">
             <h3>{{ step.title }}</h3>
-            <p cla>{{ step.description }}</p>
+            <p>{{ step.description }}</p>
           </div>
           <div class="max-w-[400px]">
-            <img :src="step.image" :alt="step.title" >
+            <img :src="step.image" :alt="step.title" />
           </div>
         </div>
       </div>
 
-      <!-- Final slide -->
+      <!-- Final CTA -->
       <div class="slide">
         <h2 class="!text-[36px] md:!text-[52px] text-center font-bold">
           Let's turn your goals into milestones
@@ -56,7 +52,7 @@
         <p class="!text-[24px] md:!text-[42px] text-center">
           Faster, smarter, and simpler.
         </p>
-        <a href="mailto:mailto:brilliant@foxion.id" class="cta-button">
+        <a href="mailto:brilliant@foxion.id" class="cta-button">
           Let's Collaborate
         </a>
       </div>
@@ -98,7 +94,7 @@ const activeIndex = ref(0)
 const stepWrapper = ref(null)
 
 const handleScroll = () => {
-  const stepEls = stepWrapper.value.querySelectorAll('.step')
+  const stepEls = stepWrapper.value.querySelectorAll('.step:not(.header-step)')
   let closestIndex = 0
   let closestDistance = Infinity
 
@@ -142,6 +138,8 @@ onBeforeUnmount(() => {
     overflow-x: hidden;
     height: 100%;
     position: relative;
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
   }
 
   .step {
@@ -187,7 +185,7 @@ onBeforeUnmount(() => {
 
       .connector-line {
         position: absolute;
-        top: 40px; // just below diamond
+        top: 40px;
         bottom: 0;
         left: 50%;
         width: 1px;
@@ -312,68 +310,72 @@ onBeforeUnmount(() => {
       }
     }
   }
+
+  .header-step {
+    opacity: 1; 
+    scroll-snap-align: center;
+    padding: 4rem 2rem;
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      line-height: 1.6;
+      color: #d1dbee;
+    }
+  }
 }
 
 @media (max-width: 640px) {
-.how-we-work-timeline {
-  .step {
-    .timeline {
-      position: absolute;
-      left: 3rem;
-      top: 0;
-      bottom: 0;
-      width: 40px;
-      display: flex;
-      align-items: start;
-      justify-content: start !important;
-      flex-direction: column;
-    }
-
-    &.active {
-      opacity: 1;
-
-      h3 {
-        font-size: 1.75rem !important;
-        font-weight: bold;
-        margin-bottom: 1rem;
+  .how-we-work-timeline {
+    .step {
+      .timeline {
+        position: absolute;
+        left: 3rem;
+        top: 0;
+        bottom: 0;
+        width: 40px;
+        display: flex;
+        align-items: start;
+        justify-content: start !important;
+        flex-direction: column;
       }
 
-      p {
-        font-size: .75rem !important;
-        line-height: 1.6;
-        color: #d1dbee;
-      }
-    }
-  }
+      &.active {
+        opacity: 1;
 
-  .content {
+        h3 {
+          font-size: 1.75rem !important;
+          font-weight: bold;
+          margin-bottom: 1rem;
+        }
 
-    .text {
-      flex: 1;
-
-      h3,
-      p {
-        transition: font-size 0.5s ease;
-      }
-
-      h3 {
-        font-size: .75rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-      }
-
-      p {
-        font-size: 0.75rem;
-        line-height: 1.6;
-        color: #d1dbee;
+        p {
+          font-size: 0.75rem !important;
+          line-height: 1.6;
+          color: #d1dbee;
+        }
       }
     }
 
-    .image img {
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    .content {
+      .text {
+        h3 {
+          font-size: 0.75rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          font-size: 0.75rem;
+          line-height: 1.6;
+          color: #d1dbee;
+        }
+      }
     }
   }
-}
 }
 </style>
