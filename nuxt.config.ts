@@ -1,5 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: true,
+  target: 'static',
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   css: [
