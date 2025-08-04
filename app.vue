@@ -4,9 +4,9 @@
     <AboutSection />
     <WorksSection  id="prev-section" />
     <HowWeWorkSection />
-    <ProductSection id="next-section" />
-    <ClientHighlights />
-    <HeroVideoSection />
+    <!-- <ProductSection id="next-section" /> -->
+    <!-- <ClientHighlights /> -->
+    <HeroVideoSection id="next-section" />
     <FooterSection />
   </div>
 </template>

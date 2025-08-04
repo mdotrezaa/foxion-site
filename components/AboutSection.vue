@@ -4,7 +4,7 @@
         <div class="about-grid">
           <!-- Left Column -->
           <div class="about-text pt-0 md:pt-[2rem] px-[1rem]">
-            <h2 class="font-semibold text-[24px] md:text-[36px] text-[#3D3D3D]">About Us</h2>
+            <h2 class="font-semibold text-[24px] md:text-[36px] text-[#3D3D3D] text-center">About Us</h2>
             <p class="text-[#5D5D5D]">
               Foxion Technologies is a technology innovation company that reimagines how organizations operate in a digital world.
               We build AI-powered and people-first systems that simplify complex workflows, automate decision-making, and scale
@@ -17,11 +17,10 @@
           </div>
 
           <!-- Right Column -->
-          <div class="about-trust pt-0 md:pt-[2rem] px-[1rem]">
+          <!-- <div class="about-trust pt-0 md:pt-[2rem] px-[1rem]">
             <h3 class="font-semibold text-[20px] md:text-[32px] text-[#3D3D3D]">Trusted by</h3>
             <h2 class="font-semibold text-[24px] md:text-[36px] text-[#3D3D3D] mb-4">30+ Companies</h2>
             
-            <!-- Fix starts here -->
             <div class="grid grid-cols-2 md:grid-cols-3 mt-8 gap-5 items-center">
               <nuxt-img class="w-full h-auto object-contain p-3 md:p-2" src="/images/national-geographic.png" alt="National Geographic" />
               <nuxt-img class="w-full h-auto object-contain p-3 md:p-2" src="/images/radikari.png" alt="Radikari" />
@@ -33,10 +32,9 @@
               <nuxt-img class="w-full h-auto object-contain p-3 md:p-2" src="/images/revyn.svg" alt="Refyn Indonesia" />
               <nuxt-img class="w-full h-auto object-contain p-3 md:p-2" src="/images/stafbook.svg" alt="Stafbook" />
             </div>
-            <!-- Fix ends here -->
 
             <p class="text-gray-500 my-[2rem]">and more...</p>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -69,7 +67,7 @@ const indexs = [
       'Team Member',
   },
   {
-    title: '300',
+    title: '10',
     description:
       'Industry Handled',
   },
@@ -88,12 +86,11 @@ const indexs = [
 
   .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 4rem;
 
     > div:first-child {
       padding-bottom: 2rem;
-      border-right: 1px solid #ddd;
     }
 
     > div:last-child {
